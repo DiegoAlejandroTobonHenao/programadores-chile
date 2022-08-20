@@ -1,6 +1,9 @@
 package com.example.api.persistence.models;
 
 import javax.persistence.*;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Positive;
 
 @Entity
 @Table(name = "users")
@@ -15,6 +18,9 @@ public class UserDAO {
 
     private String lastname;
 
+    @Positive
+    @Min(0)
+    @Max(150)
     private int age;
 
     private String city;

@@ -10,9 +10,7 @@ public class User {
     private String name;
     private String lastname;
 
-    @Positive
-    @Min(0)
-    @Max(150)
+
     private int age;
 
     private String city;

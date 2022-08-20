@@ -28,4 +28,6 @@ public interface UserMapper {
 
     @InheritInverseConfiguration
     UserDAO toUserDAO(User user);
+
+
 }

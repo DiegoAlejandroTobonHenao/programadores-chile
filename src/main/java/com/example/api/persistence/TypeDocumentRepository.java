@@ -5,8 +5,6 @@ import com.example.api.domain.gateways.TypeDocumentGateway;
 import com.example.api.persistence.crud.TypeDocumentCrudRepository;
 import com.example.api.persistence.mappers.TypeDocumentMapper;
 import com.example.api.persistence.models.TypeDocumentDAO;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -15,12 +13,14 @@ import java.util.Optional;
 @Repository
 public class TypeDocumentRepository implements TypeDocumentGateway {
 
-    @Autowired
     private TypeDocumentCrudRepository crudRepository;
 
-    @Autowired
     private TypeDocumentMapper mapper ;
 
+    public TypeDocumentRepository(TypeDocumentCrudRepository crudRepository, TypeDocumentMapper mapper) {
+        this.crudRepository = crudRepository;
+        this.mapper = mapper;
+    }
 
 
     @Override
